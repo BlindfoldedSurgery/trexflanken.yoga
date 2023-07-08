@@ -1,0 +1,17 @@
+namespace:
+  name: trexflanken
+
+ingress:
+  name: trexflanken
+  hosts:
+    - name: trexflanken.yoga
+  secret: tls-song
+  issuer: letsencrypt-issuer
+  customAnnotations:
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 https://instagram.com/trexflanken;
+
+service:
+  name: trexflanken
+  port: 80
+  externalName: noop

@@ -1,0 +1,5 @@
+apiVersion: v2
+name: trexflanken
+description: redirect to insta
+type: application
+version: 0.1.0
