@@ -1,17 +1,33 @@
 namespace:
   name: trexflanken
 
-ingress:
-  name: trexflanken
-  hosts:
-    - name: trexflanken.yoga
-  secret: tls-song
-  issuer: letsencrypt-issuer
-  customAnnotations:
-    nginx.ingress.kubernetes.io/server-snippet: |
-      return 301 https://instagram.com/trexflanken;
+deployment:
+  name: trexflankenyoga
+  image: ghcr.io/torbencarstens/trexflanken:__TAG__
+  imagePullPolicy: IfNotPresent
+  revisionHistoryLimit: 1
+  replicas: 2
+  ports:
+  - 8080
+  labels:
+    app: trexflankenyoga
+  requests:
+    cpu: 50m
+    memory: 10Mi
+  limit:
+    cpu: 300m
+    memory: 50Mi
+  healthEndpoint: /health
 
 service:
-  name: trexflanken
+  name: trexflankenyoga
   port: 80
-  externalName: noop
+  targetPort: 8080
+  appSelector: trexflankenyoga
+
+ingress:
+  secret: tls-trexflankenyoga
+  issuer: letsencrypt-issuer
+  name: trexflankenyoga
+  hosts:
+    - name: trexflanken.yoga
