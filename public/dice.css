@@ -1,0 +1,18 @@
+html, body {
+    width: 100%;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+}
+
+.dice {
+    font-size: 5em;
+}
+
+#roll {
+    width: 100%;
+}
