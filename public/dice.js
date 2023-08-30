@@ -30,7 +30,6 @@ function getCookie(key) {
 
 function setImageToggleText() {
     const current = getCookie("renderImage");
-    console.log(current);
     if (current === "false") {
         imageToggle.innerText = "Show pictures";
     } else {
