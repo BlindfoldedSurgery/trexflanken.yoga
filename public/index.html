@@ -3,22 +3,30 @@
 
 <head>
     <title>trexflanken</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="./dice.css">
 </head>
 
 <body>
-    <div id="container">
-        <div class="dice" id="firstDie">
-            1
-        </div>
-        <div class="dice" id="secondDie">
-            2
-        </div>
-    </div>
-    <div>
-        <button id="roll" onclick="rollDice()" autofocus="">Roll</button>
-    </div>
-    <script src="./dice.js"></script>
+<table id="container">
+    <tbody>
+    <tr>
+        <td class="dice" id="firstDie"></td>
+        <td></td>
+        <td class="dice" id="secondDie"></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <button id="roll" onclick="rollDice()" autofocus="">Roll</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="firstDescription"></td>
+        <td id="descriptionSpacer">an</td>
+        <td id="secondDescription"></td>
+    </tr>
+    </tbody>
+</table>
+<script src="./dice.js"></script>
 </body>
-
 </html>

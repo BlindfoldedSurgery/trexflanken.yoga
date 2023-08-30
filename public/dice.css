@@ -2,17 +2,43 @@ html, body {
     width: 100%;
 }
 
-#container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 100px;
-}
-
 .dice {
     font-size: 5em;
 }
 
 #roll {
     width: 100%;
+}
+
+table, tbody, tr {
+    width: 100%;
+}
+
+table {
+    border-spacing: 100px 10px;
+}
+
+td {
+    width: auto;
+}
+
+#firstDie, #firstDescription {
+    text-align: center;
+}
+
+#secondDie, #secondDescription {
+    text-align: center;
+}
+
+#firstDescription {
+    width: 33%;
+}
+
+#descriptionSpacer {
+    width: 33%;
+    text-align: center;
+}
+
+#secondDescription {
+    width: 33%;
 }

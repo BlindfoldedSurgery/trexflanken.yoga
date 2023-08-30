@@ -10,9 +10,16 @@ const BODY_PARTS = [
 //select the classes we require
 const cubeOne = document.getElementById('firstDie');
 const cubeTwo = document.getElementById('secondDie');
+const descriptionOne = document.getElementById('firstDescription');
+const descriptionTwo = document.getElementById('secondDescription');
 const rollBtn = document.getElementById('roll');
 let oldFirst = 0;
 let oldSecond = 1;
+
+function addDescription(first, second) {
+    descriptionOne.innerText = BODY_PARTS[first - 1];
+    descriptionTwo.innerText = BODY_PARTS[second - 1];
+}
 
 function getRandomSide(unacceptable) {
     let next = 0;
@@ -29,6 +36,8 @@ function rollDice() {
 
     cubeOne.innerText = first;
     cubeTwo.innerText = second;
+
+    addDescription(first, second);
 }
 
 // set initial side
