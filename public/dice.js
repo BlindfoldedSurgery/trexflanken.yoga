@@ -13,6 +13,7 @@ const cubeTwo = document.getElementById('secondDie');
 const descriptionOne = document.getElementById('firstDescription');
 const descriptionTwo = document.getElementById('secondDescription');
 const rollBtn = document.getElementById('roll');
+const image = document.getElementById("image");
 let oldFirst = 0;
 let oldSecond = 1;
 
@@ -30,14 +31,20 @@ function getRandomSide(unacceptable) {
     return next;
 }
 
+function renderImage(first, second) {
+    const url = "";
+    image.src = url;
+}
+
 function rollDice() {
     const first = getRandomSide([oldFirst]);
     const second = getRandomSide([oldSecond, first]);
 
-    cubeOne.innerText = first;
-    cubeTwo.innerText = second;
+    cubeOne.innerText = first.toString();
+    cubeTwo.innerText = second.toString();
 
     addDescription(first, second);
+    renderImage(first, second);
 }
 
 // set initial side
