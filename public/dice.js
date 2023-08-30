@@ -47,6 +47,7 @@ function toggleImageRender() {
     }
 
     setImageToggleText();
+    renderImage();
 }
 
 function addDescription(first, second) {
@@ -66,11 +67,17 @@ function getRandomSide(unacceptable) {
 function renderImage(first, second) {
     const cookieValue = getCookie("renderImage");
 
+    // if called by `toggleImageRender` we can use the old values since we set them in `rollDice` after rolling
+    if (first === undefined || second === undefined) {
+        first = oldFirst;
+        second = oldSecond;
+    }
+
     // show images per default
     if (cookieValue === undefined || cookieValue === "true") {
-        first = 3;
-        second = 5;
-        image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${first}_${second}.jpg`;
+        const lower = Math.min(first, second);
+        const higher = Math.max(first, second);
+        image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher} .jpg`;
     } else {
         image.src = "";
     }
@@ -86,6 +93,9 @@ function rollDice() {
     addDescription(first, second);
     renderImage(first, second);
     setImageToggleText();
+
+    oldFirst = first;
+    oldSecond = second;
 }
 
 // set initial side
