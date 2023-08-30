@@ -28,6 +28,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" public/index.html
       - name: Build the tagged Docker image
         run: docker build -t ghcr.io/blindfoldedsurgery/trexflanken:${GITHUB_SHA} .
       - name: Push the tagged Docker image
@@ -39,7 +40,6 @@ jobs:
     needs: [ lint, build_push_docker ]
     steps:
       - uses: actions/checkout@v3
-      - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" public/index.html
       - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" values.yaml
       - name: install helm chart
         uses: BlindfoldedSurgery/github-action-helm@v0.3.0
