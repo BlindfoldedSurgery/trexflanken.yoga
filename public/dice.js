@@ -50,7 +50,9 @@ function toggleImageRender() {
 
 function addDescription(first, second) {
     descriptionOne.innerText = BODY_PARTS[first - 1];
-    descriptionTwo.innerText = BODY_PARTS[second - 1];
+    descriptionTwo.innerText = BODY_PARTS[second - 1]
+        .replace("Linker", "Linken")
+        .replace("Rechter", "Rechten");
 }
 
 function getRandomSide(unacceptable) {
