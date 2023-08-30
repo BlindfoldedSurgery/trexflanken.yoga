@@ -3,7 +3,7 @@ namespace:
 
 deployment:
   name: trexflankenyoga
-  image: ghcr.io/torbencarstens/trexflanken:__TAG__
+  image: ghcr.io/blindfoldedsurgery/trexflanken:__TAG__
   imagePullPolicy: IfNotPresent
   revisionHistoryLimit: 1
   replicas: 2
