@@ -7,8 +7,9 @@ html, body {
 }
 
 #roll {
-    width: 100%;
-    height: 50px;
+    width: 50%;
+    height: 100px;
+    touch-action: manipulation;
 }
 
 table, tbody, tr {
@@ -44,10 +45,15 @@ td {
     width: 33%;
 }
 
-#imageContainer, #toggleContainer {
+#imageContainer, #toggleContainer, #rollContainer {
     text-align: center;
 }
 
 #image {
     max-height: 500px;
+}
+
+#hideImageToggle {
+    width: 100px;
+    height: 50px;
 }
