@@ -77,7 +77,7 @@ function renderImage(first, second) {
     if (cookieValue === undefined || cookieValue === "true") {
         const lower = Math.min(first, second);
         const higher = Math.max(first, second);
-        image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher} .jpg`;
+        image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher}.jpg`;
     } else {
         image.src = "";
     }
