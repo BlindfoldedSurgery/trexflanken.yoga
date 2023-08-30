@@ -40,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" public/index.html
+      - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" values.yaml
       - name: install helm chart
         uses: BlindfoldedSurgery/github-action-helm@v0.3.0
         with:
