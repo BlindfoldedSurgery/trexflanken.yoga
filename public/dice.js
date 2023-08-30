@@ -12,7 +12,6 @@ const cubeOne = document.getElementById('firstDie');
 const cubeTwo = document.getElementById('secondDie');
 const descriptionOne = document.getElementById('firstDescription');
 const descriptionTwo = document.getElementById('secondDescription');
-const rollBtn = document.getElementById('roll');
 const image = document.getElementById("image");
 const imageToggle = document.getElementById("hideImageToggle");
 let oldFirst = 0;
