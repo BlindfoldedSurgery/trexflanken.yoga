@@ -14,8 +14,40 @@ const descriptionOne = document.getElementById('firstDescription');
 const descriptionTwo = document.getElementById('secondDescription');
 const rollBtn = document.getElementById('roll');
 const image = document.getElementById("image");
+const imageToggle = document.getElementById("hideImageToggle");
 let oldFirst = 0;
 let oldSecond = 1;
+
+function setCookie(key, value) {
+    document.cookie = `${key}=${value};samesite=strict`;
+}
+
+function getCookie(key) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${key}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setImageToggleText() {
+    const current = getCookie("renderImage");
+    console.log(current);
+    if (current === "false") {
+        imageToggle.innerText = "Show pictures";
+    } else {
+        imageToggle.innerText = "Hide pictures";
+    }
+}
+
+function toggleImageRender() {
+    const current = getCookie("renderImage");
+    if (current === "false") {
+        setCookie("renderImage", "true");
+    } else {
+        setCookie("renderImage", "false");
+    }
+
+    setImageToggleText();
+}
 
 function addDescription(first, second) {
     descriptionOne.innerText = BODY_PARTS[first - 1];
@@ -32,8 +64,16 @@ function getRandomSide(unacceptable) {
 }
 
 function renderImage(first, second) {
-    const url = "";
-    image.src = url;
+    const cookieValue = getCookie("renderImage");
+
+    // show images per default
+    if (cookieValue === undefined || cookieValue === "true") {
+        first = 3;
+        second = 5;
+        image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${first}_${second}.jpg`;
+    } else {
+        image.src = "";
+    }
 }
 
 function rollDice() {
@@ -45,6 +85,7 @@ function rollDice() {
 
     addDescription(first, second);
     renderImage(first, second);
+    setImageToggleText();
 }
 
 // set initial side

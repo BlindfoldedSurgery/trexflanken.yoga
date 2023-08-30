@@ -42,3 +42,11 @@ td {
 #secondDescription {
     width: 33%;
 }
+
+#imageContainer, #toggleContainer {
+    text-align: center;
+}
+
+#image {
+    max-height: 500px;
+}
