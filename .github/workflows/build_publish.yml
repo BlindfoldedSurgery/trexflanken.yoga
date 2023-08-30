@@ -39,7 +39,7 @@ jobs:
     needs: [ lint, build_push_docker ]
     steps:
       - uses: actions/checkout@v3
-      - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" values.yaml
+      - run: sed -i -e "s/__TAG__/${GITHUB_SHA}/g" public/index.html
       - name: install helm chart
         uses: BlindfoldedSurgery/github-action-helm@v0.3.0
         with:
