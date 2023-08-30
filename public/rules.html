@@ -11,17 +11,28 @@
         }
 
         table {
-            border-spacing: 10px 5px;
+            border-spacing: 50px 5px;
+            table-layout: fixed;
         }
 
-        li, td {
-            font-size: 1.1em;
+        li, td, p {
+            font-size: 1.4em;
         }
 
         * {
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+        }
+
+        .number {
+            width: 40%;
+            text-align: right;
+        }
+
+        .bodypart {
+            width: 60%;
+            text-align: left;
         }
     </style>
 </head>
@@ -40,31 +51,39 @@
     <p>Jeder Spieler würfelt 2 Zahlen.</p>
     <p>Diese Zahlen bestimmen welche Körperteile aneinander getaped werden</p>
 
+    <h3>Spezialregeln</h3>
+    <p></p>
+
     <h2>Nummerierung</h2>
     <table>
         <tr>
-            <td>1</td>
-            <td>Linker Unterschenkel</td>
+            <td class="number">1</td>
+            <td class="bodypart">Linker Unterschenkel</td>
         </tr>
         <tr>
-            <td>2</td>
-            <td>Rechter Unterschenkel</td>
+            <td class="number">2</td>
+            <td class="bodypart">Rechter Unterschenkel</td>
         </tr>
         <tr>
-            <td>3</td>
-            <td>Linker Oberschenkel</td>
+            <td class="number">3</td>
+            <td class="bodypart">Linker Oberschenkel</td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>Rechter Oberschenkel</td>
+            <td class="number">4</td>
+            <td class="bodypart">Rechter Oberschenkel</td>
         </tr>
         <tr>
-            <td>5</td>
-            <td>Linker Unterarm</td>
+            <td class="number">5</td>
+            <td class="bodypart">Linker Unterarm</td>
         </tr>
         <tr>
-            <td>6</td>
-            <td>Rechter Unterarm</td>
+            <td class="number">6</td>
+            <td class="bodypart">Rechter Unterarm</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Beispiel 1 und 4: Spieler taped den linken Unterschenkel an den rechten Oberschenkel
+            </td>
         </tr>
         <tr>
             <td colspan="2">
