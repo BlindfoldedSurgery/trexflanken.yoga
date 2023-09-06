@@ -7,3 +7,4 @@ COPY public/rules.html /usr/share/nginx/html/rules.html
 COPY public/index.html /usr/share/nginx/html/index.html
 COPY public/dice.js /usr/share/nginx/html/dice.js
 COPY public/dice.css /usr/share/nginx/html/dice.css
+COPY public/favicon.png /usr/share/nginx/html/favicon.png
