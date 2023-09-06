@@ -31,3 +31,4 @@ ingress:
   name: trexflankenyoga
   hosts:
     - name: trexflanken.yoga
+    - name: trexflunken.yoga
