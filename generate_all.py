@@ -39,7 +39,7 @@ for i in range(1, 6):
     for j in range(i + 1, 7):
         tag = f"""<div class='imgContainer'>
     <p>{BODY_PARTS[i - 1]} an {BODY_PARTS[j - 1]} ({i} {j})</p>
-    <img alt='' src='https://sos-de-fra-1.exo.io/trexflankenyoga/trex_{i}_{j}.jpg' />
+    <img alt='example for position with numbers {i} and {j}' src='https://sos-de-fra-1.exo.io/trexflankenyoga/trex_{i}_{j}.jpg' />
 </div>"""
         image_tags.append(tag)
 
