@@ -1,5 +1,11 @@
 FROM nginxinc/nginx-unprivileged:1.25.2
 
+USER root
+
+RUN chown -R nginx:nginx /usr/share/nginx/
+
+USER nginx
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY public/all.html /usr/share/nginx/html/all.html
