@@ -78,6 +78,7 @@ function renderImage(first, second) {
         const lower = Math.min(first, second);
         const higher = Math.max(first, second);
         image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher}.jpg`;
+        image.alt = `example for position with numbers ${lower} and ${higher}`;
     } else {
         image.src = "";
     }
