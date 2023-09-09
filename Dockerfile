@@ -19,3 +19,7 @@ COPY --chown=nginx:nginx public/instagram_logo_2016.svg /usr/share/nginx/html/in
 RUN sed -zri 's/\n//g' /usr/share/nginx/html/*.html
 RUN sed -zri 's/ +/ /g' /usr/share/nginx/html/*.html
 RUN sed -zri 's/> </></g' /usr/share/nginx/html/*.html
+
+RUN sed -zri 's/(\{|;|^)\n/\1/g' /usr/share/nginx/html/*.css && \
+    sed -zri 's/ +//g' /usr/share/nginx/html/*.css && \
+    sed -zri 's/}\n/}/g' /usr/share/nginx/html/*.css
