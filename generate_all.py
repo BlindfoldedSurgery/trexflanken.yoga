@@ -2,7 +2,7 @@ base_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>treflanken.yoga</title>
+    <title>Alle Bilder</title>
     <style>
       body {{
         width: 100%;
