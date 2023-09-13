@@ -7,7 +7,6 @@ const BODY_PARTS = [
     "Rechter Unterarm",
 ]
 
-//select the classes we require
 const cubeOne = document.getElementById('firstDie');
 const cubeTwo = document.getElementById('secondDie');
 const descriptionOne = document.getElementById('firstDescription');
@@ -27,21 +26,25 @@ function getCookie(key) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
+function shouldRenderImage() {
+    const value = getCookie("renderImage");
+
+    return value === undefined || value === "true";
+}
+
 function setImageToggleText() {
-    const current = getCookie("renderImage");
-    if (current === "false") {
-        imageToggle.innerText = "Show pictures";
-    } else {
+    if (shouldRenderImage()) {
         imageToggle.innerText = "Hide pictures";
+    } else {
+        imageToggle.innerText = "Show pictures";
     }
 }
 
 function toggleImageRender() {
-    const current = getCookie("renderImage");
-    if (current === "false") {
-        setCookie("renderImage", "true");
-    } else {
+    if (shouldRenderImage()) {
         setCookie("renderImage", "false");
+    } else {
+        setCookie("renderImage", "true");
     }
 
     setImageToggleText();
@@ -65,8 +68,6 @@ function getRandomSide(unacceptable) {
 }
 
 function renderImage(first, second) {
-    const cookieValue = getCookie("renderImage");
-
     // if called by `toggleImageRender` we can use the old values since we set them in `rollDice` after rolling
     if (first === undefined || second === undefined) {
         first = oldFirst;
@@ -74,7 +75,7 @@ function renderImage(first, second) {
     }
 
     // show images per default
-    if (cookieValue === undefined || cookieValue === "true") {
+    if (shouldRenderImage()) {
         const lower = Math.min(first, second);
         const higher = Math.max(first, second);
         image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher}.jpg`;
