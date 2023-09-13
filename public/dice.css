@@ -2,17 +2,17 @@ html, body {
     width: 99%;
     font-size: 1.32em;
     background-color: #213555;
-    color: #D5C283;
+    color: #eaa62a;
 }
 
 button {
-    background-color: #4F709C;
-    color: #F0F0F0;
+    background-color: #3F608C;
+    color: #efe7b6;
     border: 0;
 }
 
 a, a:visited {
-    color: #eaa62a;
+    color: #f5bc47;
 }
 
 button, #firstDescription, #secondDescription, #descriptionSpacer {
