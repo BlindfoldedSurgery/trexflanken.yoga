@@ -81,6 +81,7 @@ function renderImage(first, second) {
         image.alt = `example for position with numbers ${lower} and ${higher}`;
     } else {
         image.src = "";
+        image.alt = "";
     }
 }
 
