@@ -15,7 +15,7 @@ const descriptionTwo = document.getElementById('secondDescription');
 const image = document.getElementById("image");
 const imageToggle = document.getElementById("hideImageToggle");
 let oldFirst = 0;
-let oldSecond = 1;
+let oldSecond = 0;
 
 function setCookie(key, value) {
     document.cookie = `${key}=${value};samesite=strict`;
