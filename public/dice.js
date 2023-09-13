@@ -16,8 +16,8 @@ const imageToggle = document.getElementById("hideImageToggle");
 let oldFirst = 0;
 let oldSecond = 0;
 
-function setCookie(key, value) {
-    document.cookie = `${key}=${value};samesite=strict`;
+function setCookie(key, value, samesite="strict") {
+    document.cookie = `${key}=${value};samesite=${samesite}`;
 }
 
 function getCookie(key) {
