@@ -68,14 +68,14 @@ function getRandomSide(unacceptable) {
 }
 
 function renderImage(first, second) {
-    // if called by `toggleImageRender` we can use the old values since we set them in `rollDice` after rolling
-    if (first === undefined || second === undefined) {
-        first = oldFirst;
-        second = oldSecond;
-    }
-
     // show images per default
     if (shouldRenderImage()) {
+        // if called by `toggleImageRender` we can use the old values since we set them in `rollDice` after rolling
+        if (first === undefined || second === undefined) {
+            first = oldFirst;
+            second = oldSecond;
+        }
+
         const lower = Math.min(first, second);
         const higher = Math.max(first, second);
         image.src = `https://sos-de-fra-1.exo.io/trexflankenyoga/trex_${lower}_${higher}.jpg`;
