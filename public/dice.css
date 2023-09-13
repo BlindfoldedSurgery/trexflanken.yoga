@@ -1,6 +1,18 @@
 html, body {
     width: 99%;
     font-size: 1.32em;
+    background-color: #213555;
+    color: #E5D283;
+}
+
+button {
+    background-color: #4F709C;
+    color: #F0F0F0;
+    border: 0;
+}
+
+a, a:visited {
+    color: #eaa62a;
 }
 
 button, #firstDescription, #secondDescription, #descriptionSpacer {
@@ -18,6 +30,7 @@ button {
 #roll {
     width: 50%;
     height: 100%;
+    font-size: 6em;
 }
 
 #rollContainer {
@@ -69,6 +82,7 @@ td {
 #hideImageToggle {
     width: 400px;
     height: 150px;
+    font-size: 2em;
 }
 
 #header {
